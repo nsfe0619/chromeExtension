@@ -7,6 +7,9 @@
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
   "default_locale": "en",
   "background": {
     "scripts": [
@@ -15,5 +18,15 @@
       "scripts/background.js"
     ]
   },
-  "permissions": []
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.ptt.cc/bbs/*"
+      ],
+      "js": [
+        "execute.js"
+      ]
+    }
+  ]
 }
